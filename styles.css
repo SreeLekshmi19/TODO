@@ -1,3 +1,4 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css);
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -31,25 +32,25 @@ input {
 }
 
 button {
-    background: #28a745;
-    color: white;
+    color: #28a745;
     border: none;
     padding: 8px 15px;
     cursor: pointer;
     border-radius: 4px;
     transition: background 0.3s;
+    margin: 3px;
 }
 
 button:hover {
     background: #218838;
 }
 
-ul {
+#todos {
     list-style: none;
     padding: 0;
 }
 
-ul div {
+#todos div {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -59,13 +60,13 @@ ul div {
     border-radius: 4px;
 }
 
-li {
+p {
     cursor: pointer;
     flex-grow: 1;
     text-align: left;
 }
 
-li.finish {
+p.finish {
     text-decoration: line-through;
     color: gray;
 }
@@ -74,4 +75,8 @@ li.finish {
     color: red;
     font-size: 14px;
     margin-top: 5px;
+}
+
+.do{
+    border-left: 3px solid #218838;
 }
