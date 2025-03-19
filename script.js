@@ -7,7 +7,7 @@ const todos = JSON.parse(localStorage.getItem("todos")) ?? [];
 
 function addTodo() {
     content.innerHTML = "";
-    for (let ele of todos) {
+    todos.forEach( (ele, idx) =>  {
         if (ele === "") {
             err.innerText = "Please enter a todo!";
             err.style.color = "red";
@@ -33,6 +33,7 @@ function addTodo() {
             });
             btndelete.addEventListener('click', (e) => {
                 e.target.parentElement.remove();
+                
             });
             btnedit.addEventListener('click', () => {
                 let oldValue = p.innerText;
@@ -52,7 +53,7 @@ function addTodo() {
             ele = "";
             err.innerText = "";
         }
-    }
+    });
 }
 
 function addArray() {
@@ -71,3 +72,5 @@ todo.addEventListener('keypress', (e) => {
         addTodo();
     }
 });
+
+addTodo();
