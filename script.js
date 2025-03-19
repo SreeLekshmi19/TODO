@@ -30,6 +30,21 @@ function addTodo() {
         btndelete.addEventListener('click', (e) => {
             e.target.parentElement.remove();
         });
+        btnedit.addEventListener('click', () => {
+            let oldValue = p.innerText;
+            let input = document.createElement('input');
+            input.value = p.innerText;
+            input.classList.add("todo-edit");
+            div.replaceChild(input, p);
+            input.addEventListener('blur', () => {
+                if (input.value.trim() === "") {
+                    p.innerText = oldValue;
+                } else {
+                    p.innerText = input.value;
+                }
+                div.replaceChild(p, input);
+            })
+        })
         todo.value = "";
         err.innerText = "";
     }
