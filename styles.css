@@ -41,10 +41,6 @@ button {
     margin: 3px;
 }
 
-button:hover {
-    background: #218838;
-}
-
 #todos {
     list-style: none;
     padding: 0;
