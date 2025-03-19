@@ -33,6 +33,8 @@ function addTodo() {
             });
             btndelete.addEventListener('click', (e) => {
                 e.target.parentElement.remove();
+                todos.splice(idx, 1);
+                localStorage.setItem("todos", JSON.stringify(todos));
                 
             });
             btnedit.addEventListener('click', () => {
@@ -50,6 +52,7 @@ function addTodo() {
                     div.replaceChild(p, input);
                 });
             });
+            todo.value = "";
             ele = "";
             err.innerText = "";
         }
