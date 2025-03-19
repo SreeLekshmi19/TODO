@@ -7,7 +7,7 @@ const todos = JSON.parse(localStorage.getItem("todos")) ?? [];
 
 function addTodo() {
     content.innerHTML = "";
-    todos.forEach( (ele, idx) =>  {
+    todos.forEach((ele, idx) => {
         if (ele === "") {
             err.innerText = "Please enter a todo!";
             err.style.color = "red";
@@ -35,7 +35,7 @@ function addTodo() {
                 e.target.parentElement.remove();
                 todos.splice(idx, 1);
                 localStorage.setItem("todos", JSON.stringify(todos));
-                
+
             });
             btnedit.addEventListener('click', () => {
                 let oldValue = p.innerText;
@@ -48,6 +48,8 @@ function addTodo() {
                         p.innerText = oldValue;
                     } else {
                         p.innerText = input.value;
+                        todos[idx] = input.value;
+                        localStorage.setItem("todos", JSON.stringify(todos));
                     }
                     div.replaceChild(p, input);
                 });
@@ -58,6 +60,8 @@ function addTodo() {
         }
     });
 }
+
+addTodo();
 
 function addArray() {
     todos.push(todo.value);
@@ -75,5 +79,3 @@ todo.addEventListener('keypress', (e) => {
         addTodo();
     }
 });
-
-addTodo();
