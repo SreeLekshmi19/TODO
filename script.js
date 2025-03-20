@@ -8,10 +8,7 @@ const todos = JSON.parse(localStorage.getItem("todos")) ?? [];
 function addTodo() {
     content.innerHTML = "";
     todos.forEach((ele, idx) => {
-        if (ele === "") {
-            err.innerText = "Please enter a todo!";
-            err.style.color = "red";
-        } else {
+        if (ele !== "") {
             const p = document.createElement('p');
             const btndelete = document.createElement('button');
             const deleteIcon = document.createElement('i');
@@ -36,7 +33,6 @@ function addTodo() {
                 todos.splice(idx, 1);
                 localStorage.setItem("todos", JSON.stringify(todos));
                 addTodo();
-
             });
             btnedit.addEventListener('click', () => {
                 let oldValue = p.innerText;
@@ -55,18 +51,21 @@ function addTodo() {
                     div.replaceChild(p, input);
                 });
             });
-            todo.value = "";
-            ele = "";
-            err.innerText = "";
         }
     });
 }
 
-addTodo();
-
 function addArray() {
-    todos.push(todo.value);
+    const todoValue = todo.value.trim();
+    if (todoValue === "") {
+        err.innerText = "Please enter a todo!";
+        err.style.color = "red";
+        return;
+    }
+    err.innerText = "";
+    todos.push(todoValue);
     localStorage.setItem("todos", JSON.stringify(todos));
+    todo.value = "";
 }
 
 btn.addEventListener('click', () => {
@@ -80,3 +79,5 @@ todo.addEventListener('keypress', (e) => {
         addTodo();
     }
 });
+
+addTodo();
