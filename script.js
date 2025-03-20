@@ -35,7 +35,7 @@ function addTodo() {
                 e.target.parentElement.remove();
                 todos.splice(idx, 1);
                 localStorage.setItem("todos", JSON.stringify(todos));
-                addTodo;
+                addTodo();
 
             });
             btnedit.addEventListener('click', () => {
