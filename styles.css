@@ -9,6 +9,15 @@ body {
     margin: 0;
 }
 
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    position: fixed;
+    width: 100vw;
+}
+
 .container {
     background: #fff;
     padding: 20px;
@@ -19,7 +28,12 @@ body {
 }
 
 h1 {
-    color: #333;
+    color:#218838;
+}
+
+#filter{
+    padding-inline: 20px;
+    padding-block: 5px;
 }
 
 input {
