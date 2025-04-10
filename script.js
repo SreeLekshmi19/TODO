@@ -3,6 +3,10 @@ const content = document.getElementById('todos');
 const btn = document.getElementById('btn');
 const err = document.getElementById('err');
 
+const all = document.getElementById("all");
+const completed = document.getElementById("completed");
+const notCompleted = document.getElementById("not-completed");
+
 const todos = JSON.parse(localStorage.getItem("todos")) ?? [];
 
 function addTodo() {
