@@ -1,4 +1,5 @@
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css);
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -9,7 +10,7 @@ body {
     margin: 0;
 }
 
-header{
+header {
     background-color: #218838;
     display: flex;
     align-items: center;
@@ -19,7 +20,7 @@ header{
     width: 100vw;
 }
 
-select{
+select {
     width: 15%;
     margin-right: 15px;
 }
@@ -38,7 +39,7 @@ h1 {
     margin-left: 15px;
 }
 
-#filter{
+#filter {
     padding-inline: 20px;
     padding-block: 5px;
 }
@@ -94,6 +95,6 @@ p.finish {
     margin-top: 5px;
 }
 
-.do{
+.do {
     border-left: 4px solid #218838;
 }
